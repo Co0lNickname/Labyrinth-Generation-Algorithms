@@ -1,3 +1,4 @@
+from PIL.Image import Image, Resampling
 from example_from_gpt import generate_maze_recursive_backtracking
 from converting.converting_files import matrix_to_image
 
@@ -22,5 +23,7 @@ for row in maze:
         print(col, end=' ')
     print()
 
-image = matrix_to_image(maze)
-image.show()
+image: Image = matrix_to_image(maze)
+print(image.size)
+
+image.resize((4096, 4096), resample=Resampling.LANCZOS).show()
