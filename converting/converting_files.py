@@ -19,6 +19,6 @@ def is_image_black_and_white(image_matrix: Union[list, np.ndarray, tuple]):
 
 def matrix_to_image(image_matrix: Union[list, np.ndarray, tuple]) -> Image:
     if is_image_black_and_white(image_matrix):
-        return Image.fromarray(image_matrix)
+        return Image.fromarray(image_matrix * 255)
     else:
         return Image.fromarray(np.uint8(image_matrix))

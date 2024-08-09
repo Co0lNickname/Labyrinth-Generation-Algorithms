@@ -1,4 +1,5 @@
 from example_from_gpt import generate_maze_recursive_backtracking
+from converting.converting_files import matrix_to_image
 
 
 MAZE_SIZE = [255, 255]  # in millimeters
@@ -20,3 +21,6 @@ for row in maze:
     for col in row:
         print(col, end=' ')
     print()
+
+image = matrix_to_image(maze)
+image.show()
